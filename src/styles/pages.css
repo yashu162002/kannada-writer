@@ -1,0 +1,277 @@
+/* ── Page rendering ────────────────────────────────────────────────────── */
+
+.kw-editor-scroll {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.kw-page-stage {
+  min-height: 100%;
+  padding: 26px 32px 110px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(80, 92, 104, 0.055) 1px, transparent 0) 0 0 / 22px 22px,
+    #e9ecef;
+}
+
+.kw-page-scale-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kw-page-sheet {
+  position: relative;
+  background: #ffffff;
+  box-shadow: var(--shadow-sheet);
+  transform-origin: top left;
+  border-radius: 2px;
+}
+
+.kw-page-sheet[data-borders='true'] {
+  outline: 1px solid #dfe4e8;
+}
+
+.kw-page-sheet[data-first='true'] {
+  margin-top: 0;
+}
+
+.kw-page-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+/* The page surface must remain a full-height writing area, even when empty. */
+.kw-page-body > .kw-editor-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.kw-page-body > .kw-editor-content > .kw-editor-content {
+  flex: 1 1 auto;
+}
+
+.kw-page-header,
+.kw-page-footer {
+  flex: 0 0 auto;
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: #6b7581;
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+}
+
+.kw-page-header {
+  border-bottom: 1px solid #eef1f3;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+}
+
+.kw-page-footer {
+  border-top: 1px solid #eef1f3;
+  margin-top: 10px;
+  padding-top: 4px;
+}
+
+.kw-page-footer .kw-footer-main {
+  flex: 1;
+}
+
+.kw-page-number {
+  color: #6b7581;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Automatic page-division guides drawn behind the continuous sheet */
+.kw-page-guide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px dashed rgba(120, 132, 144, 0.42);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.kw-page-guide-label {
+  position: absolute;
+  right: 6px;
+  top: 4px;
+  font-size: 9px;
+  color: #98a2ad;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 1px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+}
+
+.kw-page-gutter {
+  position: absolute;
+  top: 0;
+  width: 34px;
+  text-align: right;
+  font-size: 9.5px;
+  color: #a3abb3;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+/* ── Paginated print / preview pages ───────────────────────────────────── */
+.kw-page {
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sheet);
+}
+
+.kw-page.kw-page--print {
+  box-shadow: none;
+  margin: 0 auto;
+}
+
+.kw-page-content {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.kw-page-content > * {
+  /* margins are contained by the wrapper below */
+}
+
+.kw-page-block {
+  display: flow-root;
+}
+
+.kw-page-header-bar,
+.kw-page-footer-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #667079;
+  white-space: pre-wrap;
+}
+
+.kw-page-header-bar {
+  border-bottom: 1px solid #edf0f2;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.kw-page-footer-bar {
+  border-top: 1px solid #edf0f2;
+  padding-top: 4px;
+  margin-top: 8px;
+}
+
+.kw-paginate-host {
+  position: fixed;
+  left: -20000px;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Preview modal */
+.kw-preview-scroll {
+  flex: 1;
+  overflow: auto;
+  background: #e4e8eb;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* ── Print ─────────────────────────────────────────────────────────────── */
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    height: auto !important;
+  }
+
+  body > #root {
+    display: none !important;
+  }
+
+  .kw-print-root {
+    display: block !important;
+    background: #fff;
+  }
+
+  .kw-print-root .kw-page {
+    box-shadow: none !important;
+    break-after: page;
+    page-break-after: always;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .kw-print-root .kw-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .kw-print-root .kw-page-content {
+    overflow: hidden;
+  }
+}
+
+.kw-print-root {
+  display: none;
+}
+
+/* ── Responsive page sizing ────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .kw-page-stage {
+    padding: 14px 8px 80px;
+  }
+}
+
+/* Table / image safety inside paginated output */
+.kw-page-content table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.kw-page-content td,
+.kw-page-content th {
+  border: 1px solid #b7c0c7;
+  padding: 5px 8px;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.kw-page-content th {
+  background: #f2f5f6;
+  font-weight: 600;
+}
+
+.kw-page-content img {
+  max-width: 100%;
+  height: auto;
+}

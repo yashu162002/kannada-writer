@@ -1,0 +1,23 @@
+/* Font stacks — actual @font-face declarations live in /fonts/kannada-fonts.css */
+
+:root {
+  --kw-ui-font: 'Segoe UI', 'Noto Sans Kannada', 'Nirmala UI', system-ui, -apple-system, sans-serif;
+  --kw-kannada-font: 'Noto Sans Kannada', 'Nirmala UI', 'Tunga', 'Lohit Kannada', sans-serif;
+  --kw-serif-kannada-font: 'Noto Serif Kannada', 'Kedage', 'Mallige', serif;
+}
+
+.font-kannada {
+  font-family: var(--kw-kannada-font);
+}
+
+.font-kannada-serif {
+  font-family: var(--kw-serif-kannada-font);
+}
+
+/* Kannada text should never be broken inside a grapheme cluster. */
+.kannada {
+  font-family: var(--kw-kannada-font);
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: break-word;
+}

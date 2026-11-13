@@ -1,0 +1,76 @@
+
+> kannada-writer@1.0.0 build
+> tsc -b && vite build
+
+src/components/common/SuggestionPopup.tsx(43,22): error TS2304: Cannot find name 'onSelect'.
+src/components/common/SuggestionPopup.tsx(47,11): error TS2304: Cannot find name 'onSelect'.
+src/components/common/SuggestionPopup.tsx(65,17): error TS2323: Cannot redeclare exported variable 'SuggestionPopup'.
+src/components/common/SuggestionPopup.tsx(130,11): error TS2339: Property 'suggestions' does not exist on type 'Suggestion[]'.
+src/components/common/SuggestionPopup.tsx(141,22): error TS2345: Argument of type '(prev: any) => number' is not assignable to parameter of type 'number'.
+src/components/common/SuggestionPopup.tsx(141,23): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/common/SuggestionPopup.tsx(146,22): error TS2345: Argument of type '(prev: any) => number' is not assignable to parameter of type 'number'.
+src/components/common/SuggestionPopup.tsx(146,23): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/components/common/SuggestionPopup.tsx(191,10): error TS2323: Cannot redeclare exported variable 'SuggestionPopup'.
+src/components/common/SuggestionPopup.tsx(191,10): error TS2484: Export declaration conflicts with exported declaration of 'SuggestionPopup'.
+src/components/editor/SuggestionPopup.tsx(4,15): error TS2305: Module '"@/hooks/useKannadaTyping"' has no exported member 'TypingPopupState'.
+src/components/editor/SuggestionPopup.tsx(96,33): error TS7006: Parameter 'suggestion' implicitly has an 'any' type.
+src/components/editor/SuggestionPopup.tsx(96,45): error TS7006: Parameter 'index' implicitly has an 'any' type.
+src/hooks/useKannadaTyping.ts(11,42): error TS2304: Cannot find name 'Editor'.
+src/hooks/useKannadaTyping.ts(12,34): error TS2304: Cannot find name 'useState'.
+src/hooks/useKannadaTyping.ts(12,43): error TS2304: Cannot find name 'TypingPopupState'.
+src/hooks/useKannadaTyping.ts(13,35): error TS2304: Cannot find name 'useState'.
+src/hooks/useKannadaTyping.ts(13,44): error TS2304: Cannot find name 'TransliterationSettings'.
+src/hooks/useKannadaTyping.ts(14,5): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(16,20): error TS2304: Cannot find name 'useRef'.
+src/hooks/useKannadaTyping.ts(16,27): error TS2304: Cannot find name 'TypingPopupState'.
+src/hooks/useKannadaTyping.ts(17,26): error TS2304: Cannot find name 'useRef'.
+src/hooks/useKannadaTyping.ts(18,20): error TS2304: Cannot find name 'useRef'.
+src/hooks/useKannadaTyping.ts(19,21): error TS2304: Cannot find name 'useRef'.
+src/hooks/useKannadaTyping.ts(20,21): error TS2304: Cannot find name 'useRef'.
+src/hooks/useKannadaTyping.ts(20,28): error TS2304: Cannot find name 'Editor'.
+src/hooks/useKannadaTyping.ts(23,20): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(23,39): error TS2304: Cannot find name 'TypingPopupState'.
+src/hooks/useKannadaTyping.ts(28,28): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(28,51): error TS2304: Cannot find name 'Editor'.
+src/hooks/useKannadaTyping.ts(31,9): error TS2304: Cannot find name 'isSkippableBlock'.
+src/hooks/useKannadaTyping.ts(41,19): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(44,29): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(70,19): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(88,20): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(93,40): error TS2304: Cannot find name 'TypingPopupState'.
+src/hooks/useKannadaTyping.ts(95,10): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(97,14): error TS7006: Parameter 'result' implicitly has an 'any' type.
+src/hooks/useKannadaTyping.ts(122,23): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(123,13): error TS2304: Cannot find name 'TypingPopupState'.
+src/hooks/useKannadaTyping.ts(146,25): error TS2304: Cannot find name 'TextSelection'.
+src/hooks/useKannadaTyping.ts(160,14): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(170,28): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(179,25): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(188,22): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(194,25): error TS2304: Cannot find name 'useCallback'.
+src/hooks/useKannadaTyping.ts(200,30): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(237,15): error TS2304: Cannot find name 'transliterationService'.
+src/hooks/useKannadaTyping.ts(282,37): error TS2304: Cannot find name 'PUNCTUATION'.
+src/hooks/useKannadaTyping.ts(294,3): error TS2304: Cannot find name 'useEffect'.
+src/hooks/useKannadaTyping.ts(302,24): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/hooks/useKannadaTyping.ts(308,24): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+src/hooks/useKannadaTyping.ts(318,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(type: keyof ElementEventMap, listener: (this: Element, ev: Event) => any, options?: boolean | AddEventListenerOptions | undefined): void', gave the following error.
+    Argument of type '"keydown"' is not assignable to parameter of type 'keyof ElementEventMap'.
+  Overload 2 of 2, '(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions | undefined): void', gave the following error.
+    Argument of type '(event: KeyboardEvent) => void' is not assignable to parameter of type 'EventListenerOrEventListenerObject'.
+      Type '(event: KeyboardEvent) => void' is not assignable to type 'EventListener'.
+        Types of parameters 'event' and 'evt' are incompatible.
+          Type 'Event' is missing the following properties from type 'KeyboardEvent': altKey, charCode, code, ctrlKey, and 17 more.
+src/hooks/useKannadaTyping.ts(320,20): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(type: keyof ElementEventMap, listener: (this: Element, ev: Event) => any, options?: boolean | EventListenerOptions | undefined): void', gave the following error.
+    Argument of type '"keydown"' is not assignable to parameter of type 'keyof ElementEventMap'.
+  Overload 2 of 2, '(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions | undefined): void', gave the following error.
+    Argument of type '(event: KeyboardEvent) => void' is not assignable to parameter of type 'EventListenerOrEventListenerObject'.
+      Type '(event: KeyboardEvent) => void' is not assignable to type 'EventListener'.
+        Types of parameters 'event' and 'evt' are incompatible.
+          Type 'Event' is missing the following properties from type 'KeyboardEvent': altKey, charCode, code, ctrlKey, and 17 more.
+src/hooks/useKannadaTyping.ts(324,3): error TS2304: Cannot find name 'useEffect'.
+src/hooks/useKannadaTyping.ts(335,3): error TS2304: Cannot find name 'useEffect'.
+src/hooks/useKannadaTyping.ts(337,44): error TS2304: Cannot find name 'TransliterationSettings'.
+src/hooks/useKannadaTyping.ts(338,29): error TS2304: Cannot find name 'transliterationService'.

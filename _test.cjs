@@ -1,0 +1,1 @@
+import {generateCandidates} from './src/services/transliteration/engine.ts';
